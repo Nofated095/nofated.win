@@ -6,6 +6,16 @@
   <meta name="description" content="A personal developer who lives in Beijing, China." />
   <meta name="msvalidate.01" content="18E1B8B1375D6D1603970E5998BE1077" />
   <link rel="icon" href="https://img.9595095.xyz/mc">
+  <script type="text/javascript" src="jquery-1.6.js"></script>
+  <script>
+    $(".label li").mouseenter(function () {
+      if (!$(this).hasClass(".showed")) {
+        $(".showed").removeClass("showed");
+        $(this).addClass("showed");
+        $(".label>div").eq($(this).index()).addClass("showed");
+      }
+    })
+  </script>
   <style>
     @import "https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/bulma/0.9.3/css/bulma.min.css";
     @import url('https://fonts.sourcegcdn.com/css?family=Megrim|Overpass+Mono');
@@ -23,7 +33,6 @@
       padding: 1rem;
       background-color: white;
     }
-
   </style>
   <!-- style>html{
 -webkit-filter: grayscale(100%); /* webkit */
@@ -37,6 +46,21 @@ filter:gray; /*ie9- */
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Home • Nofated</title>
   <link rel="stylesheet" href="https://lf3-cdn-tos.bytecdntp.com/cdn/expire-1-M/font-awesome/6.0.0/css/all.min.css">
+  <script language="javascript">
+    function Tab(num)
+    {
+        var i;
+        for(i=1;i<=4;i++)
+        {
+            if(i==num)
+               document.getElementById("d"+i).style.display="block",
+               document.getElementById("L"+i).class="is-active";
+             else
+               document.getElementById("d"+i).style.display="none",
+               document.getElementById("L"+i).class="";
+        }
+    }
+    </script>
 </head>
 
 <body>
@@ -59,19 +83,22 @@ filter:gray; /*ie9- */
               Nofated
             </h1>
             <p></p>
-            <p class="font-mono">
-              <a href="#">Home</a> | <a href="./about.html">About</a> | <a
-                target="_blank" href='https://blog.nofated.win'>Blog</a>
-            </p>
+            <div class="tabs font-mono">
+              <ul>
+                <!--li class="is-active" id="L1" onclick="Tab(1)"><a>Home</a></li -->
+                <li id="L1" onclick="Tab(1)"><a>Home</a></li>
+                <li id="L2" onclick="Tab(2)"><a>About</a></li>
+                <li><a target="_blank" href='https://blog.nofated.win'>Blog</a></li>
+              </ul>
+            </div>
           </div>
         </div>
 
-        <div class="content font-mono">
+        <div class="content font-mono" id="d1">
           <h3>Yoo!</h3>
           <p>I'm Nofated. I am a newbie in the coding world.</p>
           <p>Find me on
-            <span class="icon" target="_blank" href='https://github.com/Nofated095'><i
-                class="fab fa-github"></i></span>
+            <span class="icon" target="_blank" href='https://github.com/Nofated095'><i class="fab fa-github"></i></span>
             <span class="icon" target="_blank" href='https://twitter.com/nofated095'><i
                 class="fab fa-twitter"></i></span>
             <span class="icon" target="_blank" href='https://t.me/nofated'><i class="fab fa-telegram"></i>
@@ -91,7 +118,16 @@ filter:gray; /*ie9- */
             <li>🚔 I am a fan of Minecraft, Grand Theft Auto, and anime.</li>
           </ol>
         </div>
+        <div class="content font-mono" id="d2" style="display: none;">
+          <h3>About</h3>
+          <p>I am in senior high and I'm preparing for the Chinese College Entrance Examination, aka GaoKao.</p>
+          <p>I do open-source works, you can check them on <a target="_blank"
+              href='https://github.com/Nofated095'>GitHub</a>. But I didn't have a completely independent open-source
+            project.😢</p>
+          <p>I am happy to chat. Chinese is OK but I am very poor at English listening and speaking.😰</p>
+        </div>
       </div>
+    </div>
   </section>
   <footer class="footer">
     <div class="content has-text-centered font-mono">
